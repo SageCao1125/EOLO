@@ -362,7 +362,8 @@ def train():
  
             # check loss
             if torch.isnan(total_loss):
-                continue
+                # continue
+                raise RuntimeError(f"Loss exploded to NaN")
 
             loss_dict = dict(
                 loss_obj=loss_obj,
