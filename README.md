@@ -32,7 +32,7 @@
 
 1. (Optional) Creating conda environment.
 ```shell
-conda create -n EOLO
+conda create -n EOLO python=3.8 -y
 conda activate EOLO
 ```
 
