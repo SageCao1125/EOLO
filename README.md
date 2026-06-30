@@ -294,7 +294,7 @@ In our check, loading the old checkpoint directly with the cleaned code produced
 To avoid this, please use:
 
 ```text
-EOLO_50_60.61_current_code.pth
+EOLO_50_60.61_corrected_26.06.30.pth
 ```
 
 This checkpoint was produced by remapping `.AFNet.` to `.SREF.` and saving the state dict again with the current code. It loads with `strict=True` under the current module names. A correct inference run should not report missing keys for `fusion_s`, `fusion_m`, or `fusion_l`.
@@ -303,7 +303,7 @@ In short:
 
 ```text
 Old checkpoint name: EOLO_50_60.61.pth
-Current-code checkpoint name: EOLO_50_60.61_current_code.pth
+Corrected checkpoint name: EOLO_50_60.61_corrected_26.06.30.pth
 Only the state dict key names were updated. The learned weights are the same.
 ```
 
