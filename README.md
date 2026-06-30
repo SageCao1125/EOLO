@@ -53,6 +53,8 @@ pip install spikingjelly mmcv-lite mmengine timm pycocotools thop wandb
 
 **[Update 26.06.30]** If you use the current cleaned code, please use `EOLO_50_60.61_corrected_26.06.30.pth` [this link](https://drive.google.com/file/d/1WMncJ0AGa6R1swRzPI0kW3gh7DYwDoFO/view?usp=drive_link) for inference. This file has the same learned weights as the original released `EOLO_50_60.61.pth`, but its state dict keys have been updated to match the current module names. See [Checkpoint note for inference](#checkpoint-note-for-inference).
 
+We also re-ran the full under-exposure VOC reproduction from scratch and confirmed that the code, data generation pipeline, and training settings are working as expected. The reproduced result is very close to the reported checkpoint result. Please see [Reproduction Check, June 2026](#reproduction-check-june-2026) for the command, environment, log, and numbers.
+
 Codes for training EOLO: 
 
 ```shell
