@@ -51,7 +51,7 @@ pip install spikingjelly mmcv-lite mmengine timm pycocotools thop wandb
 ## Training
 **[Update 24.08.05]** The checkpoint of EOLO in under-exposure scene in VOC is now released. You can download the checkpoint through [this link](https://drive.google.com/drive/folders/1Q9L7dzf82zRGWOyka3hnJqhTjKFn0Vog?usp=drive_link).
 
-**[Update 26.06.30]** If you use the current cleaned code, please use `EOLO_50_60.61_current_code.pth` for inference. This file has the same learned weights as the original released `EOLO_50_60.61.pth`, but its state dict keys have been updated to match the current module names. See [Checkpoint note for inference](#checkpoint-note-for-inference).
+**[Update 26.06.30]** If you use the current cleaned code, please use `EOLO_50_60.61_corrected_26.06.30.pth` [this link](https://drive.google.com/file/d/1WMncJ0AGa6R1swRzPI0kW3gh7DYwDoFO/view?usp=drive_link) for inference. This file has the same learned weights as the original released `EOLO_50_60.61.pth`, but its state dict keys have been updated to match the current module names. See [Checkpoint note for inference](#checkpoint-note-for-inference).
 
 Codes for training EOLO: 
 
@@ -317,7 +317,7 @@ new_ckpt = {k.replace(".AFNet.", ".SREF."): v for k, v in old_ckpt.items()}
 torch.save(new_ckpt, "EOLO_50_60.61_key_remapped.pth")
 ```
 
-For the current released `EOLO_50_60.61_current_code.pth`, this conversion has already been done and verified.
+For the current released `EOLO_50_60.61_corrected_26.06.30.pth`, this conversion has already been done and verified.
 
 ## Citation
 
