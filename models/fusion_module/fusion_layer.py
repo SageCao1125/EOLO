@@ -2,7 +2,10 @@ import torch
 from torch import nn
 import os
 import torch.nn.functional as F
-from mmcv.cnn import constant_init, kaiming_init
+try:
+    from mmcv.cnn import constant_init, kaiming_init
+except ImportError:
+    from mmengine.model.weight_init import constant_init, kaiming_init
 import numpy as np
 import cv2
 

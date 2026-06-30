@@ -113,8 +113,11 @@ def cspdarknet_tiny(pretrained=False,in_channel=3, **kwargs):
         try:
             print('Loading the pretrained model ...')
 
-            # path_to_dir = os.path.dirname(os.path.abspath(__file__))
-            checkpoint = torch.load('/home/lsf_storage/homes/jiahang/jiahang/Event-YOLO/PyTorch_YOLO-Family/weights/cspdarknet_tiny/cspdarknet_tiny.pth', map_location='cpu')
+            path_to_dir = os.path.dirname(os.path.abspath(__file__))
+            local_weight = os.path.abspath(os.path.join(path_to_dir, '..', '..', 'weights', 'cspdarknet_tiny', 'cspdarknet_tiny.pth'))
+            default_weight = '/home/lsf_storage/homes/jiahang/jiahang/Event-YOLO/PyTorch_YOLO-Family/weights/cspdarknet_tiny/cspdarknet_tiny.pth'
+            weight_path = local_weight if os.path.exists(local_weight) else default_weight
+            checkpoint = torch.load(weight_path, map_location='cpu')
             model.load_state_dict(checkpoint, strict=False)
             print('The pretrained weight of cspdarknet_tiny is found successfully ...')
         except:
